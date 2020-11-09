@@ -39,8 +39,9 @@ public class UserController implements UserResource {
     }
 
     @Override
-    public ResponseEntity<String> deleteUser(String id) {
-        return new ResponseEntity<>("User deleted successfully.", HttpStatus.NO_CONTENT);
+    public ResponseEntity<String> deleteUser(Long id) {
+
+        return new ResponseEntity<>(userService.deleteUser(id), HttpStatus.NO_CONTENT);
     }
 
     @Override

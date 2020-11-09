@@ -25,7 +25,7 @@ public interface UserResource {
     ResponseEntity<User> createUser(@RequestBody User user);
 
     @DeleteMapping("/user/{id}")
-    ResponseEntity<String> deleteUser(@PathVariable String id);
+    ResponseEntity<String> deleteUser(@PathVariable Long id);
 
     @PutMapping("/user/{id}")
     ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable String id);

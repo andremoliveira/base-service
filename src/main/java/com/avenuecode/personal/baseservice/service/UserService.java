@@ -31,4 +31,9 @@ public class UserService {
         return databaseServiceClient.createUser(user);
     }
 
+    public String deleteUser(Long id){
+        String response = databaseServiceClient.deleteUser(id);
+        return response;
+    }
+
 }
