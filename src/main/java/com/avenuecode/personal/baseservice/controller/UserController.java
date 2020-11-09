@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Set;
+
 @RestController
 public class UserController implements UserResource {
 
@@ -22,6 +24,12 @@ public class UserController implements UserResource {
     public ResponseEntity<User> getUser(Long id) {
         User user = userService.getUserById(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Set<User>> getUsers() {
+        Set<User> users = userService.getAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @Override

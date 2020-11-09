@@ -5,6 +5,8 @@ import com.avenuecode.personal.baseservice.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 @Service
 public class UserService {
 
@@ -19,4 +21,10 @@ public class UserService {
         User user = databaseServiceClient.getUserById(userId);
         return user;
     }
+
+    public Set<User> getAllUsers() {
+        Set<User> users = databaseServiceClient.getAllUsers();
+        return users;
+    }
+
 }

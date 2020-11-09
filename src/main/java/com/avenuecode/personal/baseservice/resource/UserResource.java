@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Set;
+
 @RequestMapping("/base-service/v1")
 public interface UserResource {
 
     @GetMapping("/user/{id}")
     ResponseEntity<User> getUser(@PathVariable Long id);
+
+    @GetMapping("/user")
+    ResponseEntity<Set<User>> getUsers();
 
     @PostMapping("/user")
     ResponseEntity<User> createUser(@RequestBody User user);
