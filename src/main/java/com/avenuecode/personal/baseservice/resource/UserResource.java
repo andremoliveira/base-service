@@ -28,6 +28,6 @@ public interface UserResource {
     ResponseEntity<String> deleteUser(@PathVariable Long id);
 
     @PutMapping("/user/{id}")
-    ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable String id);
+    ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id);
 
 }

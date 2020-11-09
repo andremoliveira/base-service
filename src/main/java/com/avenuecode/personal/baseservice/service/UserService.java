@@ -36,4 +36,9 @@ public class UserService {
         return response;
     }
 
+    public User updateUser(User user, Long id){
+        user = databaseServiceClient.updateUser(user, id);
+        return user;
+    }
+
 }

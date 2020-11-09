@@ -45,7 +45,8 @@ public class UserController implements UserResource {
     }
 
     @Override
-    public ResponseEntity<User> updateUser(User user, String id) {
-        return new ResponseEntity<>(User.builder().id(Long.parseLong(id)).name(user.getName()).build(), HttpStatus.OK);
+    public ResponseEntity<User> updateUser(User user, Long id) {
+        user = userService.updateUser(user, id);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }

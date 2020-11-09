@@ -22,8 +22,8 @@ public interface DatabaseServiceClient {
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/user/{userId}")
     String deleteUser(@PathVariable("userId") Long id);
-//
-//    @RequestMapping(method = RequestMethod.PUT, value = "/user/{id}")
-//    ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable String id);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/user/{userId}")
+    User updateUser(User user, @PathVariable("userId") Long id);
 
 }
