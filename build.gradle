@@ -28,8 +28,8 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 
-//	compile 'org.springframework.cloud:spring-cloud-starter-feign:1.4.7.RELEASE'
-//	compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	compile 'org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR9'
+	compile 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.5.RELEASE'
 
 }
 

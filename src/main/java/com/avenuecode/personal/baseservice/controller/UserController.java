@@ -26,7 +26,7 @@ public class UserController implements UserResource {
 
     @Override
     public ResponseEntity<User> createUser(User user) {
-        return new ResponseEntity<>(User.builder().id(1).name(user.getName()).build(), HttpStatus.OK);
+        return new ResponseEntity<>(User.builder().id(1l).name(user.getName()).build(), HttpStatus.OK);
     }
 
     @Override

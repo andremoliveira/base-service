@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Builder
@@ -13,7 +15,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class User {
 
-    private long id;
+    private Long id;
 
     private String name;
+
+    private String email;
+
+    private String dateCreation;
+
+    private String dateUpdating;
+
+    private String dateExclusion;
 }
