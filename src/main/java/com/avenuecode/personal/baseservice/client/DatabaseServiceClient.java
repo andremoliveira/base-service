@@ -20,7 +20,7 @@ public interface DatabaseServiceClient {
     Set<User> getAllUsers();
 
     @RequestMapping(method = RequestMethod.POST, value = "/user")
-    ResponseEntity<User> createUser(User user);
+    User createUser(User user);
 //
 //    @RequestMapping(method = RequestMethod.DELETE, value = "/user/{id}")
 //    ResponseEntity<User> deleteUser(@PathVariable String id);

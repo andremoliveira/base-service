@@ -27,4 +27,8 @@ public class UserService {
         return users;
     }
 
+    public User createUser(User user) {
+        return databaseServiceClient.createUser(user);
+    }
+
 }
