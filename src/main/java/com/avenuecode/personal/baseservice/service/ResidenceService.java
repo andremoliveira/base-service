@@ -31,4 +31,13 @@ public class ResidenceService {
         String response = databaseServiceClient.createResidence(residence);
         return response;
     }
+
+    public String deleteResidence(Long id) {
+        return databaseServiceClient.deleteResidence(id);
+    }
+
+    public Residence updateResidence(Residence residence, Long id) {
+        residence = databaseServiceClient.updateResidence(residence, id);
+        return residence;
+    }
 }

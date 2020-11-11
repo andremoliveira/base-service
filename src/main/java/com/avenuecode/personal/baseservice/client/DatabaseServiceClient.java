@@ -44,12 +44,12 @@ public interface DatabaseServiceClient {
 
     @PostMapping("/residence")
     String createResidence(Residence residence);
-//
-//    @DeleteMapping("/residence/{id}")
-//    ResponseEntity<String> deleteResidence(@PathVariable Long id);
-//
-//    @PutMapping("/residence/{id}")
-//    ResponseEntity<Residence> updateResidence(Residence residence, @PathVariable Long id);
+
+    @DeleteMapping("/residence/{residenceId}")
+    String deleteResidence(@PathVariable("residenceId") Long id);
+
+    @PutMapping("/residence/{residenceId}")
+    Residence updateResidence(Residence residence, @PathVariable("residenceId") Long id);
 
 
 }

@@ -40,11 +40,12 @@ public class ResidenceController implements ResidenceResource {
 
     @Override
     public ResponseEntity<String> deleteResidence(Long id) {
-        return null;
+        return new ResponseEntity<>(residenceService.deleteResidence(id), HttpStatus.NO_CONTENT);
     }
 
     @Override
     public ResponseEntity<Residence> updateResidence(Residence residence, Long id) {
-        return null;
+        residence = residenceService.updateResidence(residence, id);
+        return new ResponseEntity<>(residence, HttpStatus.OK);
     }
 }
