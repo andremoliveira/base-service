@@ -32,13 +32,9 @@ public class BillService {
         Bill response = databaseServiceClient.createBill(bill);
         return response;
     }
-//
-//    public String deleteResidence(Long id) {
-//        return databaseServiceClient.deleteResidence(id);
-//    }
-//
-//    public Residence updateResidence(Residence residence, Long id) {
-//        residence = databaseServiceClient.updateResidence(residence, id);
-//        return residence;
-//    }
+
+    public Bill updateBill(Bill bill, Long id) {
+        bill = databaseServiceClient.updateBill(bill, id);
+        return bill;
+    }
 }

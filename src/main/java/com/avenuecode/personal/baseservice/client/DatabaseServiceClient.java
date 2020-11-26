@@ -61,9 +61,6 @@ public interface DatabaseServiceClient {
     @PostMapping("/bill")
     Bill createBill(Bill bill);
 
-    @DeleteMapping("/bill/{billId}")
-    String deleteBill(@PathVariable("billId") Long id);
-
     @PutMapping("/bill/{billId}")
     Bill updateBill(Bill bill, @PathVariable("billId") Long id);
 

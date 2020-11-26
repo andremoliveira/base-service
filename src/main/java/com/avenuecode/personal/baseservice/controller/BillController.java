@@ -3,7 +3,6 @@ package com.avenuecode.personal.baseservice.controller;
 import com.avenuecode.personal.baseservice.model.Bill;
 import com.avenuecode.personal.baseservice.resource.BillResource;
 import com.avenuecode.personal.baseservice.service.BillService;
-import com.avenuecode.personal.baseservice.service.ResidenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,12 +39,8 @@ public class BillController implements BillResource {
     }
 
     @Override
-    public ResponseEntity<String> deleteBill(Long id) {
-        return null;
-    }
-
-    @Override
     public ResponseEntity<Bill> updateBill(Bill bill, Long id) {
-        return null;
+        bill = billService.updateBill(bill, id);
+        return new ResponseEntity<>(bill, HttpStatus.OK);
     }
 }
