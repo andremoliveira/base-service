@@ -33,6 +33,16 @@ public class BillService {
         return response;
     }
 
+    public String deleteBill(Long id) {
+        Bill bill = getBillById(id);
+
+        if(bill.getPaymentDay() != null) {
+            throw new IllegalStateException("A bill can't be deleted if it's already paid.");
+        }
+
+        return databaseServiceClient.deleteBill(id);
+    }
+
     public Bill updateBill(Bill bill, Long id) {
         bill = databaseServiceClient.updateBill(bill, id);
         return bill;

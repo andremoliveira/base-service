@@ -4,6 +4,7 @@ import com.avenuecode.personal.baseservice.model.Bill;
 import com.avenuecode.personal.baseservice.model.Residence;
 import com.avenuecode.personal.baseservice.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Set;
 
 @FeignClient(value = "database-service", url = "localhost:8080/database-service/v1")
+//@FeignClient(value = "database-service", url = "database-service:8080/database-service/v1")
 public interface DatabaseServiceClient {
 
     // -- User APIs -- //
@@ -60,6 +62,9 @@ public interface DatabaseServiceClient {
 
     @PostMapping("/bill")
     Bill createBill(Bill bill);
+
+    @DeleteMapping("/bill/{billId}")
+    String deleteBill(@PathVariable("billId") Long id);
 
     @PutMapping("/bill/{billId}")
     Bill updateBill(Bill bill, @PathVariable("billId") Long id);

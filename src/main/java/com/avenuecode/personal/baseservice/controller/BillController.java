@@ -39,6 +39,11 @@ public class BillController implements BillResource {
     }
 
     @Override
+    public ResponseEntity<String> deleteBill(Long id) {
+        return new ResponseEntity<>(billService.deleteBill(id), HttpStatus.NO_CONTENT);
+    }
+
+    @Override
     public ResponseEntity<Bill> updateBill(Bill bill, Long id) {
         bill = billService.updateBill(bill, id);
         return new ResponseEntity<>(bill, HttpStatus.OK);

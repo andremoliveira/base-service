@@ -24,6 +24,9 @@ public interface BillResource {
     @PostMapping("/bill")
     ResponseEntity<Bill> createBill(@RequestBody Bill bill);
 
+    @DeleteMapping("/bill/{id}")
+    ResponseEntity<String> deleteBill(@PathVariable Long id);
+
     @PutMapping("/bill/{id}")
     ResponseEntity<Bill> updateBill(@RequestBody Bill bill, @PathVariable Long id);
 }
